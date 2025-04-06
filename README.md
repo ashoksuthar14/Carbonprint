@@ -33,7 +33,8 @@ Uses **real-time data, ML models, and user behavior analysis** to provide **accu
 ---
 
 ### 📸 Image-Based Sustainability Recommendations  
-![Image-based Recommendations](https://yourdomain.com/images/feature2.png)
+![Personalization](https://github.com/ashoksuthar14/Carbonprint/blob/main/carbon%20print%200.jpg)
+![Personalization](https://github.com/ashoksuthar14/Carbonprint/blob/main/carbon%20image%20print%201.jpg)
 
 Just **snap a picture** of any item, and the AI will **analyze its carbon value** and suggest **greener alternatives**. Perfect for users who don’t know the carbon cost of everyday products.
 
@@ -54,8 +55,7 @@ Offset your emissions by **donating to verified eco-friendly organizations and N
 ---
 
 ### 🧠 AI-Driven Personalization  
-![Personalization](https://github.com/ashoksuthar14/Carbonprint/blob/main/carbon%20print%200.jpg)
-![Personalization](https://github.com/ashoksuthar14/Carbonprint/blob/main/carbon%20image%20print%201.jpg)
+
 
 Unlike generic calculators, CarbonWise learns your habits over time and **customizes sustainability suggestions** to fit your lifestyle.
 
