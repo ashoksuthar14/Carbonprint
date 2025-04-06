@@ -1,6 +1,6 @@
 # 🌱 CarbonWise: AI Assistant for a Greener Future
 
-![CarbonWise Banner](https://yourdomain.com/images/banner.png)
+![CarbonWise Banner](https://github.com/ashoksuthar14/Carbonprint/blob/main/main%20page.jpg)
 
 ---
 
@@ -63,7 +63,7 @@ Unlike generic calculators, CarbonWise learns your habits over time and **custom
 ---
 
 ### 🔮 Predictive Carbon Footprint Modeling  
-![Predictive Modeling](https://yourdomain.com/images/feature6.png)
+![Predictive Modeling](https://github.com/ashoksuthar14/Carbonprint/blob/main/about%20us%20page.jpg)
 
 Uses **machine learning models** to forecast your future emissions and offer **proactive solutions** before your impact grows.
 
