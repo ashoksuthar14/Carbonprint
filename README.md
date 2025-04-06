@@ -25,6 +25,8 @@ You can **trim that footprint** by eating local, saving energy, and skipping sin
 
 ### ⚙️ Automated & AI-Driven Calculation  
 ![Automated AI Calculation](https://github.com/ashoksuthar14/Carbonprint/blob/main/carbon%20calculator%201.jpg)
+![Automated AI Calculation](https://github.com/ashoksuthar14/Carbonprint/blob/main/carb%20calculator%202.jpg)
+![Automated AI Calculation](https://github.com/ashoksuthar14/Carbonprint/blob/main/carbon%20calulator%203.jpg)
 
 Uses **real-time data, ML models, and user behavior analysis** to provide **accurate, personalized carbon footprint tracking** — like a fitness tracker, but for your planet impact!
 
@@ -52,7 +54,8 @@ Offset your emissions by **donating to verified eco-friendly organizations and N
 ---
 
 ### 🧠 AI-Driven Personalization  
-![Personalization](https://yourdomain.com/images/feature5.png)
+![Personalization](https://github.com/ashoksuthar14/Carbonprint/blob/main/carbon%20print%200.jpg)
+![Personalization](https://github.com/ashoksuthar14/Carbonprint/blob/main/carbon%20image%20print%201.jpg)
 
 Unlike generic calculators, CarbonWise learns your habits over time and **customizes sustainability suggestions** to fit your lifestyle.
 
@@ -66,7 +69,7 @@ Uses **machine learning models** to forecast your future emissions and offer **p
 ---
 
 ### 🔄 Multi-Modal Data Input  
-![Multi-modal Input](https://yourdomain.com/images/feature7.png)
+
 
 Supports **image uploads, manual entries, and IoT/smart device integration**, making it easier than ever to track and manage your carbon footprint seamlessly.
 
