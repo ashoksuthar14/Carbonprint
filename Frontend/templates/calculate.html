@@ -1,0 +1,304 @@
+{% extends "base.html" %}
+
+{% block title %}Calculate - Carbon Footprint Calculator{% endblock %}
+
+{% block content %}
+<section class="calculator-section">
+    <div class="calculator-container fade-in">
+        <h1>Carbon Footprint Calculator</h1>
+        <p>Fill in the form below to calculate your carbon footprint</p>
+        
+        <form id="carbon-calculator" class="calculator-form">
+            <div class="form-section">
+                <h2>Energy Usage</h2>
+                <div class="form-group">
+                    <label for="electricity">Monthly Electricity Usage (kWh)</label>
+                    <input type="number" id="electricity" name="electricity" required>
+                </div>
+                <div class="form-group">
+                    <label for="natural-gas">Monthly Natural Gas Usage (therms)</label>
+                    <input type="number" id="natural-gas" name="natural-gas">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Transportation</h2>
+                <div class="form-group">
+                    <label for="car-miles">Weekly Car Miles</label>
+                    <input type="number" id="car-miles" name="car-miles">
+                </div>
+                <div class="form-group">
+                    <label for="public-transport">Weekly Public Transport Miles</label>
+                    <input type="number" id="public-transport" name="public-transport">
+                </div>
+                <div class="form-group">
+                    <label for="flights">Annual Flight Hours</label>
+                    <input type="number" id="flights" name="flights">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Diet & Lifestyle</h2>
+                <div class="form-group">
+                    <label for="diet">Diet Type</label>
+                    <select id="diet" name="diet">
+                        <option value="vegan">Vegan</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="meat-occasional">Meat - Occasional</option>
+                        <option value="meat-regular">Meat - Regular</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="shopping">Monthly Shopping Habits</label>
+                    <select id="shopping" name="shopping">
+                        <option value="minimal">Minimal</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="frequent">Frequent</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Calculate Footprint</button>
+        </form>
+
+        <div id="results" class="results-container" style="display: none;">
+            <h2>Your Carbon Footprint</h2>
+            <div class="result-card">
+                <div class="result-value">
+                    <span id="total-footprint">0</span>
+                    <span class="unit">tons CO2/year</span>
+                </div>
+                <div class="result-comparison">
+                    <p>This is <span id="comparison">0%</span> of the average US carbon footprint</p>
+                </div>
+            </div>
+
+            <div class="breakdown-section">
+                <h3>Breakdown by Category</h3>
+                <div class="progress-bars">
+                    <div class="progress-group">
+                        <label>Energy</label>
+                        <div class="progress-bar" data-value="0">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="progress-group">
+                        <label>Transportation</label>
+                        <div class="progress-bar" data-value="0">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="progress-group">
+                        <label>Lifestyle</label>
+                        <div class="progress-bar" data-value="0">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h3>Recommendations</h3>
+                <div id="recommendations-list" class="recommendations-list">
+                    <!-- Recommendations will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .calculator-section {
+        padding: 4rem 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .calculator-container {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-section {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .form-section h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .results-container {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .result-card {
+        text-align: center;
+        padding: 2rem;
+        background: var(--bg-color);
+        border-radius: 10px;
+        margin: 2rem 0;
+    }
+
+    .result-value {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .unit {
+        font-size: 1rem;
+        color: var(--text-color);
+    }
+
+    .progress-bars {
+        margin: 2rem 0;
+    }
+
+    .progress-group {
+        margin-bottom: 1rem;
+    }
+
+    .progress-bar {
+        height: 20px;
+        background: var(--bg-color);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: var(--primary-color);
+        width: 0;
+        transition: width 1s ease;
+    }
+
+    .recommendations-list {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .recommendation-card {
+        background: var(--bg-color);
+        padding: 1rem;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .recommendation-card i {
+        color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+        .calculator-section {
+            padding: 2rem 1rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.getElementById('carbon-calculator').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const electricity = parseFloat(document.getElementById('electricity').value) || 0;
+        const naturalGas = parseFloat(document.getElementById('natural-gas').value) || 0;
+        const carMiles = parseFloat(document.getElementById('car-miles').value) || 0;
+        const publicTransport = parseFloat(document.getElementById('public-transport').value) || 0;
+        const flights = parseFloat(document.getElementById('flights').value) || 0;
+        const diet = document.getElementById('diet').value;
+        const shopping = document.getElementById('shopping').value;
+
+        // Calculate footprint (simplified calculation)
+        const energyFootprint = (electricity * 0.92 + naturalGas * 11.7) / 1000;
+        const transportFootprint = (carMiles * 52 * 0.404 + publicTransport * 52 * 0.177 + flights * 0.2) / 1000;
+        const lifestyleFootprint = getLifestyleFootprint(diet, shopping);
+
+        const totalFootprint = energyFootprint + transportFootprint + lifestyleFootprint;
+
+        // Update results
+        document.getElementById('total-footprint').textContent = totalFootprint.toFixed(1);
+        document.getElementById('comparison').textContent = ((totalFootprint / 16) * 100).toFixed(1) + '%';
+
+        // Update progress bars
+        updateProgressBar('energy', (energyFootprint / totalFootprint) * 100);
+        updateProgressBar('transportation', (transportFootprint / totalFootprint) * 100);
+        updateProgressBar('lifestyle', (lifestyleFootprint / totalFootprint) * 100);
+
+        // Show recommendations
+        showRecommendations(totalFootprint);
+
+        // Show results
+        document.getElementById('results').style.display = 'block';
+    });
+
+    function getLifestyleFootprint(diet, shopping) {
+        const dietFactors = {
+            'vegan': 0.5,
+            'vegetarian': 0.8,
+            'meat-occasional': 1.2,
+            'meat-regular': 1.8
+        };
+
+        const shoppingFactors = {
+            'minimal': 0.5,
+            'moderate': 1,
+            'frequent': 1.5
+        };
+
+        return (dietFactors[diet] + shoppingFactors[shopping]) * 2;
+    }
+
+    function updateProgressBar(category, value) {
+        const progressBar = document.querySelector(`.progress-bar[data-value="${value}"]`);
+        if (progressBar) {
+            progressBar.style.width = `${value}%`;
+        }
+    }
+
+    function showRecommendations(footprint) {
+        const recommendations = [];
+        
+        if (footprint > 16) {
+            recommendations.push({
+                icon: 'fa-car',
+                text: 'Consider using public transportation or carpooling more often'
+            });
+        }
+        
+        if (footprint > 12) {
+            recommendations.push({
+                icon: 'fa-lightbulb',
+                text: 'Switch to energy-efficient appliances and LED lighting'
+            });
+        }
+        
+        if (footprint > 8) {
+            recommendations.push({
+                icon: 'fa-utensils',
+                text: 'Try reducing meat consumption and eating more plant-based meals'
+            });
+        }
+
+        const recommendationsList = document.getElementById('recommendations-list');
+        recommendationsList.innerHTML = recommendations.map(rec => `
+            <div class="recommendation-card">
+                <i class="fas ${rec.icon}"></i>
+                <p>${rec.text}</p>
+            </div>
+        `).join('');
+    }
+</script>
+{% endblock %} 

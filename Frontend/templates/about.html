@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+
+{% block title %}About - Carbon Footprint Calculator{% endblock %}
+
+{% block content %}
+<section class="about-hero">
+    <div class="about-hero-content fade-in">
+        <h1>About Carbon Footprint</h1>
+        <p>Understanding our impact on the environment</p>
+    </div>
+</section>
+
+<section class="facts-section">
+    <div class="facts-container">
+        <h2>Key Facts</h2>
+        <div class="facts-grid">
+            <div class="fact-card fade-in">
+                <i class="fas fa-industry"></i>
+                <h3>Global Emissions</h3>
+                <p>Global CO2 emissions reached 36.8 billion tons in 2022</p>
+            </div>
+            <div class="fact-card fade-in">
+                <i class="fas fa-temperature-high"></i>
+                <h3>Temperature Rise</h3>
+                <p>Global temperature has risen by 1.1°C since pre-industrial times</p>
+            </div>
+            <div class="fact-card fade-in">
+                <i class="fas fa-tree"></i>
+                <h3>Deforestation</h3>
+                <p>10 million hectares of forest are lost annually</p>
+            </div>
+            <div class="fact-card fade-in">
+                <i class="fas fa-car"></i>
+                <h3>Transportation</h3>
+                <p>Transportation accounts for 29% of US greenhouse gas emissions</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="timeline-section">
+    <div class="timeline-container">
+        <h2>Carbon Emissions Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>1750</h3>
+                    <p>Industrial Revolution begins</p>
+                </div>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>1850</h3>
+                    <p>CO2 levels at 285 ppm</p>
+                </div>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>1950</h3>
+                    <p>CO2 levels reach 310 ppm</p>
+                </div>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <h3>2020</h3>
+                    <p>CO2 levels exceed 415 ppm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="impact-section">
+    <div class="impact-container">
+        <h2>Environmental Impact</h2>
+        <div class="impact-grid">
+            <div class="impact-card fade-in">
+                <div class="impact-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h3>Climate Change</h3>
+                <p>Rising temperatures, extreme weather events, and sea level rise</p>
+            </div>
+            <div class="impact-card fade-in">
+                <div class="impact-icon">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h3>Ocean Acidification</h3>
+                <p>Increased CO2 absorption leading to ocean acidification</p>
+            </div>
+            <div class="impact-card fade-in">
+                <div class="impact-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Biodiversity Loss</h3>
+                <p>Habitat destruction and species extinction</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="solutions-section">
+    <div class="solutions-container">
+        <h2>Solutions</h2>
+        <div class="solutions-grid">
+            <div class="solution-card fade-in">
+                <i class="fas fa-solar-panel"></i>
+                <h3>Renewable Energy</h3>
+                <p>Transition to solar, wind, and other renewable energy sources</p>
+            </div>
+            <div class="solution-card fade-in">
+                <i class="fas fa-bus"></i>
+                <h3>Sustainable Transport</h3>
+                <p>Use public transport, electric vehicles, and active transport</p>
+            </div>
+            <div class="solution-card fade-in">
+                <i class="fas fa-recycle"></i>
+                <h3>Circular Economy</h3>
+                <p>Reduce, reuse, and recycle materials</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .about-hero {
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ url_for("static", filename="images/about.jpg") }}');
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    .facts-section, .timeline-section, .impact-section, .solutions-section {
+        padding: 4rem 2rem;
+    }
+
+    .facts-container, .timeline-container, .impact-container, .solutions-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .facts-grid, .impact-grid, .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .fact-card, .impact-card, .solution-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        transition: var(--transition);
+    }
+
+    .fact-card:hover, .impact-card:hover, .solution-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .fact-card i, .impact-icon i, .solution-card i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 2rem auto;
+    }
+
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background: var(--primary-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+    }
+
+    .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
+
+    .timeline-content {
+        padding: 20px;
+        background: var(--card-bg);
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .timeline-content::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        top: 20px;
+        right: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .timeline::after {
+            left: 31px;
+        }
+
+        .timeline-item {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 20px;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 0;
+        }
+
+        .timeline-content::after {
+            left: -10px;
+            right: auto;
+        }
+    }
+</style>
+{% endblock %} 

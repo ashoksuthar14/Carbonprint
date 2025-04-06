@@ -1,0 +1,389 @@
+{% extends "base.html" %}
+
+{% block title %}Donate - Carbon Footprint Calculator{% endblock %}
+
+{% block content %}
+<section class="donate-hero">
+    <div class="donate-hero-content fade-in">
+        <h1>Support Our Mission</h1>
+        <p>Help us make a difference in the fight against climate change</p>
+    </div>
+</section>
+
+<section class="organizations-section">
+    <div class="organizations-container">
+        <h2 class="section-title fade-in">Partner Organizations</h2>
+        <div class="organizations-grid">
+            <div class="org-card fade-in">
+                <div class="org-logo-container">
+                    <i class="fas fa-handshake" style="color: #e74c3c; font-size: 2.5rem;"></i>
+                    <div class="org-name-logo">
+                        <span style="color: #e74c3c; font-weight: bold;">Gram</span>
+                        <span style="color: #e74c3c; font-weight: bold;">Vikas</span>
+                    </div>
+                </div>
+                <h3>Gram Vikas</h3>
+                <p>Empowering rural communities through sustainable development</p>
+                <a href="https://www.gramvikas.org/donation-form-1/" target="_blank" class="btn">Donate Now</a>
+            </div>
+            <div class="org-card fade-in">
+                <div class="org-logo-container">
+                    <i class="fas fa-paw" style="color: #27ae60; font-size: 2.5rem;"></i>
+                </div>
+                <h3>World Wildlife Fund</h3>
+                <p>Leading organization in wildlife conservation and reducing human impact on the environment</p>
+                <a href="https://support.worldwildlife.org/site/SPageServer?pagename=main_monthly" target="_blank" class="btn">Donate Now</a>
+            </div>
+            <div class="org-card fade-in">
+                <div class="org-logo-container">
+                    <i class="fas fa-leaf" style="color: #2ecc71; font-size: 2.5rem;"></i>
+                </div>
+                <h3>Greenpeace</h3>
+                <p>Global campaigning organization for environmental protection</p>
+                <a href="https://www.greenpeace.org/international/act/donate/" target="_blank" class="btn">Donate Now</a>
+            </div>
+            <div class="org-card fade-in">
+                <div class="org-logo-container">
+                    <i class="fas fa-tree" style="color: #3498db; font-size: 2.5rem;"></i>
+                </div>
+                <h3>The Nature Conservancy</h3>
+                <p>Working to create a world where people and nature thrive</p>
+                <a href="https://www.nature.org/en-us/membership-and-giving/donate-to-our-mission/" target="_blank" class="btn">Donate Now</a>
+            </div>
+            <div class="org-card fade-in">
+                <div class="org-logo-container">
+                    <i class="fas fa-shield-alt" style="color: #f39c12; font-size: 2.5rem;"></i>
+                </div>
+                <h3>Environmental Defense Fund</h3>
+                <p>Finding practical and lasting solutions to environmental problems</p>
+                <a href="https://www.edf.org/donate" target="_blank" class="btn">Donate Now</a>
+            </div>
+            <div class="org-card fade-in">
+                <div class="org-logo-container">
+                    <i class="fas fa-seedling" style="color: #16a085; font-size: 2.5rem;"></i>
+                </div>
+                <h3>Rainforest Alliance</h3>
+                <p>Creating a more sustainable world by protecting forests and improving farmers' livelihoods</p>
+                <a href="https://www.rainforest-alliance.org/donate/" target="_blank" class="btn">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+    <div class="testimonials-container">
+        <h2>What Our Supporters Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-content">
+                    <p>"I love knowing that my donation is making a real impact in the fight against climate change."</p>
+                    <div class="testimonial-author">
+                        <img src="{{ url_for('static', filename='images/testimonial1.jpg') }}" alt="Sarah J.">
+                        <div>
+                            <h4>Sarah J.</h4>
+                            <p>Monthly Supporter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-content">
+                    <p>"The transparency and impact tracking make me confident in my donation."</p>
+                    <div class="testimonial-author">
+                        <img src="{{ url_for('static', filename='images/testimonial2.jpg') }}" alt="Michael R.">
+                        <div>
+                            <h4>Michael R.</h4>
+                            <p>One-time Donor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .donate-hero {
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ url_for("static", filename="images/donate.jpg") }}');
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    .donation-section {
+        padding: 4rem 2rem;
+    }
+
+    .donation-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .donation-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .impact-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .impact-card {
+        background: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 10px;
+        text-align: center;
+        transition: var(--transition);
+    }
+
+    .impact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .impact-card i {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .donation-form-container {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 10px;
+    }
+
+    .impact-display {
+        background: var(--primary-color);
+        color: white;
+        padding: 1rem;
+        border-radius: 5px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .donation-success {
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+
+    .success-content i {
+        font-size: 4rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .success-impact {
+        margin: 2rem 0;
+    }
+
+    .success-impact ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .success-impact li {
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .success-impact i {
+        color: var(--primary-color);
+    }
+
+    .testimonials-section {
+        background: var(--card-bg);
+        padding: 4rem 2rem;
+    }
+
+    .testimonials-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .testimonial-card {
+        background: var(--bg-color);
+        padding: 2rem;
+        border-radius: 10px;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .testimonial-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+        .donation-content {
+            grid-template-columns: 1fr;
+        }
+    }
+    /* Organizations Section Styles */
+    .organizations-section {
+        padding: 4rem 2rem;
+        background: var(--bg-color);
+        min-height: calc(100vh - 80px);
+    }
+
+    .organizations-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--text-color);
+        font-size: 2.5rem;
+    }
+
+    .organizations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .org-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        text-align: center;
+        transition: var(--transition);
+        box-shadow: var(--shadow-md);
+        border: 1px solid rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        height: 100%;
+    }
+
+    .org-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .org-logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .org-name-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .org-card h3 {
+        color: var(--text-color);
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .org-card p {
+        color: var(--text-light);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+        flex-grow: 1;
+    }
+
+    .org-card .btn {
+        width: 100%;
+        font-weight: 500;
+        padding: 1rem;
+        margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+        .organizations-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .org-card {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const donationForm = document.getElementById('donation-form');
+    const amountInput = document.getElementById('amount');
+    const treesCount = document.getElementById('trees-count');
+    const successTrees = document.getElementById('success-trees');
+    const successCO2 = document.getElementById('success-co2');
+
+    // Update trees count as amount changes
+    amountInput.addEventListener('input', () => {
+        const amount = parseFloat(amountInput.value) || 0;
+        const trees = Math.floor(amount / 2);
+        treesCount.textContent = trees;
+    });
+
+    // Handle form submission
+    donationForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const amount = parseFloat(amountInput.value);
+        const trees = Math.floor(amount / 2);
+        const co2 = trees * 0.04; // Assuming each tree offsets 0.04 tons of CO2 per year
+
+        // Update success message
+        successTrees.textContent = trees;
+        successCO2.textContent = co2.toFixed(2);
+
+        // Show success message
+        document.querySelector('.donation-content').style.display = 'none';
+        document.querySelector('.donation-success').style.display = 'block';
+
+        // Animate success
+        gsap.from('.donation-success', {
+            opacity: 0,
+            y: 50,
+            duration: 1
+        });
+    });
+</script>
+{% endblock %} 
