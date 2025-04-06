@@ -24,7 +24,7 @@ You can **trim that footprint** by eating local, saving energy, and skipping sin
 ## 🚀 Features
 
 ### ⚙️ Automated & AI-Driven Calculation  
-![Automated AI Calculation](https://yourdomain.com/images/feature1.png)
+![Automated AI Calculation](https://github.com/ashoksuthar14/Carbonprint/blob/main/carbon%20calculator%201.jpg)
 
 Uses **real-time data, ML models, and user behavior analysis** to provide **accurate, personalized carbon footprint tracking** — like a fitness tracker, but for your planet impact!
 
