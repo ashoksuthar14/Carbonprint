@@ -41,14 +41,15 @@ Just **snap a picture** of any item, and the AI will **analyze its carbon value*
 ---
 
 ### 🗣️ Interactive Voice Assistant  
-![Voice Assistant](https://yourdomain.com/images/feature3.png)
+![Voice Assistant](https://github.com/ashoksuthar14/Carbonprint/blob/main/audio%201.jpg)
 
 Have a conversation with your eco-guide! Get **real-time tips, sustainable swaps**, and track your footprint progress **through natural voice interaction**.
 
 ---
 
 ### 💚 Donation Integration  
-![Donation Feature](https://yourdomain.com/images/feature4.png)
+![Donation Feature](https://github.com/ashoksuthar14/Carbonprint/blob/main/donation%201.jpg)
+![Donation Feature](https://github.com/ashoksuthar14/Carbonprint/blob/main/donation%202.jpg)
 
 Offset your emissions by **donating to verified eco-friendly organizations and NGOs**. Your contribution directly funds tree planting, clean energy, and climate justice projects.
 
